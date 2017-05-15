@@ -3,18 +3,46 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Popcube's documentation!
-===================================
+
+The code is open source, and `available on GitHub`_.
+
+
+.. _available on GitHub: https://github.com/cl3m3nt666/popcube.xyz
+
+
+Bienvenue sur la documentation du projet  Popcube !
+====================================================
+
+.. _Read the docs: http://readthedocs.org/]
+
+Introduction
+==============  
+
+Society est une startup dédié aux applications de communication personnelles et professionnelles.
+
+Leur nouveau produit est un système complet de messagerie instantanée, tel que Skype ou Slack.
+
+Expression fonctionnelle
+-----------------------------------
+
+
+Architecture
+--------------------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+   :caption: Developpement
 
+   developpement/introduction
 
+.. toctree::
+  :maxdepth: 3
+  :caption: Infrastructure
 
-Indices and tables
-==================
+  infrastructure/introduction
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+  :maxdepth: 3
+  :caption: Marketing
+
+  marketing/introduction

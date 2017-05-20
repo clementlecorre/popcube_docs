@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stockage et réplication &mdash; Popcube 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Popcube 0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Monitoring de l’infrastucture" href="monitoring.html"/>
+        <link rel="prev" title="Conteneur" href="conteneur.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Popcube
+          
+
+          
+            
+            <img src="../_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Developpement</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developpement/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developpement/introduction.html#contrainte">Contrainte</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#contraintes">Contraintes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperviseur.html">Hyperviseur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conteneur.html">Conteneur</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Stockage et réplication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Minio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#web-ui">Web Ui</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minio-cli">Minio CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-avec-docker">Integration avec docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-du-plugin">Installation du plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#declaration-d-un-volume-minio-dans-le-docker-compose-v3">Déclaration d&#8217;un volume minio dans le docker-compose <cite>v3</cite></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring de l&#8217;infrastucture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Vue d&#8217;ensemble</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Marketing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../marketing/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../marketing/introduction.html#contrainte">Contrainte</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Popcube</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Stockage et réplication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/infrastructure/storage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stockage-et-replication">
+<h1>Stockage et réplication<a class="headerlink" href="#stockage-et-replication" title="Permalink to this headline">¶</a></h1>
+<p>Toutes les données sont stockées sur un cluster <a class="reference external" href="https://www.minio.io">minio</a></p>
+<ul class="simple">
+<li>Core <a class="reference external" href="https://github.com/minio/minfs">miniofs</a></li>
+<li>CLI <a class="reference external" href="https://github.com/minio/mc">mc</a></li>
+<li>Docker <a class="reference external" href="https://github.com/minio/minfs/tree/master/docker-plugin">plugin</a></li>
+</ul>
+<div class="section" id="id1">
+<h2>Minio<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<img alt="infrastructure/../../_static/logo/minio.svg" src="infrastructure/../../_static/logo/minio.svg" /><ul class="simple">
+<li>S3 amazon</li>
+</ul>
+<p>Aavoir une compatibilité S3 amazon.
+Les plugins et les SDKs S3 sont assez nombreux sur le marché du cloud.</p>
+<ul class="simple">
+<li>Web ui</li>
+</ul>
+<p>Une interface pour gérer les buckets.</p>
+<ul class="simple">
+<li>Erasure Code</li>
+</ul>
+<p>Minio protège les données contre les pannes de matériel et la corruption de données.</p>
+<div class="section" id="web-ui">
+<h3>Web Ui<a class="headerlink" href="#web-ui" title="Permalink to this headline">¶</a></h3>
+<p>Pour la mises en cluster il est obligatoire d&#8217;avoir 4 noeud minio mini</p>
+<p>Web interface</p>
+<img alt="infrastructure/../../_static/infrastructure/minio/web_1.png" src="infrastructure/../../_static/infrastructure/minio/web_1.png" />
+<p>Share object</p>
+<img alt="infrastructure/../../_static/infrastructure/minio/web_2.png" src="infrastructure/../../_static/infrastructure/minio/web_2.png" />
+<p>Public link</p>
+<img alt="infrastructure/../../_static/infrastructure/minio/web_3.png" src="infrastructure/../../_static/infrastructure/minio/web_3.png" />
+</div>
+<div class="section" id="minio-cli">
+<h3>Minio CLI<a class="headerlink" href="#minio-cli" title="Permalink to this headline">¶</a></h3>
+<p>Installation et copie des fichiers dans le bucket <cite>management</cite></p>
+<img alt="infrastructure/../../_static/infrastructure/minio/cli_1.png" src="infrastructure/../../_static/infrastructure/minio/cli_1.png" />
+</div>
+<div class="section" id="integration-avec-docker">
+<h3>Integration avec docker<a class="headerlink" href="#integration-avec-docker" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-du-plugin">
+<h4>Installation du plugin<a class="headerlink" href="#installation-du-plugin" title="Permalink to this headline">¶</a></h4>
+<p>(Très très très très simple ...)</p>
+<img alt="infrastructure/../../_static/infrastructure/minio/docker_1.png" src="infrastructure/../../_static/infrastructure/minio/docker_1.png" />
+</div>
+<div class="section" id="declaration-d-un-volume-minio-dans-le-docker-compose-v3">
+<h4>Déclaration d&#8217;un volume minio dans le docker-compose <cite>v3</cite><a class="headerlink" href="#declaration-d-un-volume-minio-dans-le-docker-compose-v3" title="Permalink to this headline">¶</a></h4>
+<img alt="infrastructure/../../_static/infrastructure/minio/docker_2.png" src="infrastructure/../../_static/infrastructure/minio/docker_2.png" />
+<ul class="simple">
+<li>Term 1 : client</li>
+<li>Term 2 : API_1</li>
+<li>Term 3 : API_2</li>
+</ul>
+<img alt="infrastructure/../../_static/infrastructure/minio/docker_3.png" src="infrastructure/../../_static/infrastructure/minio/docker_3.png" />
+<p>Les fichiers générés par l&#8217;API sont bien présent dans les deux conteneurs</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="monitoring.html" class="btn btn-neutral float-right" title="Monitoring de l’infrastucture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="conteneur.html" class="btn btn-neutral" title="Conteneur" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, cl3m3nt.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

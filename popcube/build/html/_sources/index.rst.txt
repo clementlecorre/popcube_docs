@@ -16,7 +16,7 @@ Bienvenue sur la documentation du projet  Popcube !
 .. _Read the docs: http://readthedocs.org/]
 
 Introduction
-==============
+==============  
 
 Society est une startup dédié aux applications de communication personnelles et professionnelles.
 
@@ -40,11 +40,6 @@ Architecture
   :caption: Infrastructure
 
   infrastructure/introduction
-  infrastructure/hyperviseur
-  infrastructure/conteneur
-  infrastructure/storage
-  infrastructure/monitoring
-  infrastructure/final
 
 .. toctree::
   :maxdepth: 3

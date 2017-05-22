@@ -44,6 +44,7 @@ Architecture
   infrastructure/conteneur
   infrastructure/storage
   infrastructure/monitoring
+  infrastructure/loadBalancing
   infrastructure/final
 
 .. toctree::

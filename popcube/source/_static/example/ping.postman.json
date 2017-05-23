@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Popcube iner API",
+		"_postman_id": "93985f54-5ddd-a4ed-2a1a-e74912ffa258",
+		"description": "The inner API of Popcube aim to define every methods need to manage communication organisation inside PopCube chat project",
+		"schema": "http://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"description": "Folder for ping",
+			"item": [
+				{
+					"name": "Pong",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Pong ? :D\"] = responseBody.has(\"pong\");",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://maxime.popcube.xyz/ping",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Test api ping"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

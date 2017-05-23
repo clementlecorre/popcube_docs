@@ -22,12 +22,11 @@ Society est une startup dédié aux applications de communication personnelles e
 
 Leur nouveau produit est un système complet de messagerie instantanée, tel que Skype ou Slack.
 
-Expression fonctionnelle
------------------------------------
+.. toctree::
+   :maxdepth: 3
+   :caption: Préambule
 
-
-Architecture
---------------------
+   methode_de_travail
 
 .. toctree::
    :maxdepth: 3

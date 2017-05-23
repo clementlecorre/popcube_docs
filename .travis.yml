@@ -13,7 +13,7 @@ after_success:
   - >-
     if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USER" -p="$DOCKER_PWD" $DOCKER_REGISTRY;
-    docker run -it -v ${PWD}/popcube:/root/docs cl3m3nt/sphinx make html
+    docker run -it -v ${PWD}/popcube:/root/docs cl3m3nt/sphinx make html;
     docker build -t $DOCKER_REGISTRY/product_docs .;
     docker push $DOCKER_REGISTRY/product_docs;
     fi

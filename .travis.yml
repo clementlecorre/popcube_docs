@@ -1,16 +1,6 @@
 sudo: required
 
 language: bash
-env:
-  DOCKER_COMPOSE_VERSION: 1.9.0
-
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-  - cp .env.test .env
-
 
 services:
   - docker
@@ -26,7 +16,7 @@ after_success:
     docker run -it -v ${PWD}/popcube:/root/docs cl3m3nt/sphinx make html
     docker build -t $DOCKER_REGISTRY/product_docs .;
     docker push $DOCKER_REGISTRY/product_docs;
-	fi
+    fi
 
 notifications:
   slack: societyco:T1mHeYKrOtopvRjIZ68MqOQo

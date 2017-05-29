@@ -5,7 +5,7 @@ Automatisation
 
 Ansible est un outil open-source de gestion de configuration écrit en python (aussi dispo en version commerciale avec une interface graphique et un service de déploiement). La configuration se fait via des fichiers appelés “Playbooks”.
 
-Les avantages : 
+Les avantages :
 
 * Un système déclaratif : syntaxe YAML facilement lisible, ce qui rend l’apprentissage très rapide.
 
@@ -14,15 +14,53 @@ Les avantages :
 Quasiment rien à installer. A part Ansible sur votre machine hôte, tout ce dont vous avez besoin c’est d’un accès root via SSH sur vos serveurs cibles.
 
 
-Provisionning des machines virtuel
+Provisionning des machines virtuelles
 ------------------------------------------
 
-.. todo:: @Jeremy
+Nous avons besoin d'automatiser la création de machines virtuelles car elles servent d'hôte pour les conteneurs Docker.
+
+Ainsi, nous pourrons créer autant de stack docker (dans la limite des ressources physiques disponibles).
+
+Exemple de configuration::
+
+  - vsphere_guest:
+      vcenter_hostname: vcenter.vsphere.local    // On se connecte sur le vCenter qui manage les esxi
+      username: user
+      password: password
+      guest: vm_name
+      state: powered_on
+      vm_extra_config:                           // On active l'ajout à chaud CPU & RAM
+        vcpu.hotadd: yes
+        mem.hotadd:  yes
+        notes: docker-node
+        folder: VM
+      vm_disk:                                   // On définit le stockage de la VM
+        disk1:
+          size_gb: 64
+          type: thin
+          datastore: ISCSI
+          folder: VM
+      vm_nic:                                    // On définit le réseau auquel sera connecté la VM
+        nic1:
+          type: vmxnet3
+          network: VM Network
+          network_type: standard
+      vm_hardware:                               // On spécifie le matériel & l'image iso utilisée
+        memory_mb: 8192
+        num_cpus: 2
+        osid: debian8
+        scsi: paravirtual
+        vm_cdrom:
+          type: "iso"
+          iso_path: "Datastore/iso/debian-8.iso"
+      esxi:                                      // On indique sur quel ESXi hôte la vm fonctionnera
+        datacenter: Datacenter
+        hostname: esx1.popcube.xyz
 
 Ajout aux cluster swarm
 ---------------------------
 
-Pour rejoindre le cluster j'utilise le roles : 
+Pour rejoindre le cluster j'utilise le roles :
 
  `Github du roles swarm <https://galaxy.ansible.com/atosatto/docker-swarm/>`_
 
@@ -80,7 +118,7 @@ Pour rejoindre le cluster j'utilise le roles :
     TASK [atosatto.docker-swarm : Check if "Swarm Mode" is enabled.] ***************
     ok: [sw01]
 
-    TASK [atosatto.docker-swarm : Init "Swarm Mode" on the first manager.] ********* 
+    TASK [atosatto.docker-swarm : Init "Swarm Mode" on the first manager.] *********
 
 Conteneur
 ---------------------------
@@ -88,7 +126,7 @@ Conteneur
 Réseaux et dns
 ^^^^^^^^^^^^^^^^^^^^
 
-Je ping la database de l'organisation de maxime:: 
+Je ping la database de l'organisation de maxime::
 
     docker@docker-02:~$ docker exec -it maxime_api.1.93ms44c6jdslhhazikwbdmrki /bin/sh
     /go/src/github.com/titouanfreville/popcubeapi # ping maxime_database
@@ -132,7 +170,7 @@ Depuis la database je ping le conteneur disponible::
         ;; WHEN: Mon May 29 12:23:16 UTC 2017
         ;; MSG SIZE  rcvd: 194
 
-Le nom de staks et service:: 
+Le nom de staks et service::
 
     root@1c32df28a830:/# nslookup maxime_api
     Server:		127.0.0.11
@@ -173,13 +211,13 @@ Exmple : ajout d'un labels::
             "CompletedAt": "2017-05-29T12:12:32.897318749Z",
             "Message": "update completed"
         }
-    docker@docker-02:~$ docker service update maxime_api    
+    docker@docker-02:~$ docker service update maxime_api
     "UpdateStatus": {
                 "State": "updating",
                 "StartedAt": "2017-05-29T12:36:21.96182509Z",
                 "CompletedAt": "1970-01-01T00:00:00Z",
                 "Message": "update in progress"
-            }    
+            }
 
             ID            NAME              IMAGE                                              NODE       DESIRED STATE  CURRENT STATE            ERROR  PORTS
             fg54tw7l62lb  maxime_api.1      registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-01  Running        Running 2 minutes ago
@@ -193,17 +231,17 @@ Exmple : ajout d'un labels::
             n9wg7howeasg  maxime_api.4      registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-01  Running        Running 2 minutes ago
             f75oupbzedf1   \_ maxime_api.4  registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-01  Shutdown       Shutdown 3 minutes ago
             uhha8n4lajcr  maxime_api.5      registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-02  Running        Running 2 minutes ago
-            34sja7n3xcv5   \_ maxime_api.5  registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-02  Shutdown       Shutdown 3 minutes ago                
+            34sja7n3xcv5   \_ maxime_api.5  registry.popcube.xyz:5000/popcubeapi:alpha-1.1.11  docker-02  Shutdown       Shutdown 3 minutes ago
 
 
 
 Portabilité
 ^^^^^^^^^^^^^^^^
 
-Les images se déplace facillement entre les noeuds 
+Les images se déplace facillement entre les noeuds
 
 Exemple de nos images docker::
-    
+
     registry.popcube.xyz:5000/popcubeapi : 332 MB
     registry.popcube.xyz:5000/popcube_website : 18 MB
 

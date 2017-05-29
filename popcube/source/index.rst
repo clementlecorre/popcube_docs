@@ -33,6 +33,8 @@ Leur nouveau produit est un système complet de messagerie instantanée, tel que
    :caption: Developpement
 
    developpement/introduction
+   developpement/fonctionalite
+   developpement/interface
 
 .. toctree::
   :maxdepth: 3

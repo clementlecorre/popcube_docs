@@ -44,6 +44,7 @@ Leur nouveau produit est un système complet de messagerie instantanée, tel que
   infrastructure/storage
   infrastructure/monitoring
   infrastructure/loadBalancing
+  infrastructure/automatisation
   infrastructure/final
 
 .. toctree::

@@ -1,11 +1,11 @@
 Fonctionalité
-========
+==============
 
 Popcube est avant tout remplis de fonctionnalités utiles aux partages de ressources et communications rapide privée ou groupée.
 
 
 Organisation
-########
+#############
 L’organisation est tout simplement le nom de domaine sur PopCube. Il permet à vos équipse de se retrouver sous un seul
 nom et à tous vos collaborateurs de vous retrouver facilement.
 

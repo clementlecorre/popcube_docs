@@ -1,5 +1,5 @@
 Interface
-========
+==========
 
 L'interface intuitive permet la gestion de plusieurs organisations et permet de suivre une multitude de channel.
 
@@ -9,7 +9,7 @@ Design
 Utilisation d'un design épurer pour faciliter la compréhention des utilisateurs.
 
 Hiérarchie
-########
+###########
 
 .. image:: ../../_static/developpement/interface/hierarchie.PNG
 
@@ -48,7 +48,7 @@ Permet à l'utilisateur de s'enregistrer sur l'oganisation.
 .. image:: ../../_static/developpement/interface/register.PNG
 
 Organisations
-########
+###############
 
 Permet de séléctionner l'organisation sur laquel l'utilisateur veut parler.
 
@@ -72,7 +72,7 @@ profil
 Profil de l'utilisateur
 
 organisation
-^^^^^^^^
+^^^^^^^^^^^^^
 
 Gestion de l'organisation par le ou les administrateurs
 

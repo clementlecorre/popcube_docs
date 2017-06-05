@@ -81,3 +81,9 @@ Partages
 
 Il est posssible d'envoyer des fichiers relié à un channel.
 Chaque utilisateurs se connectant au channels peut les voir ou recevoir.
+
+Messages
+####
+
+Les messages sont envoyé avec certaines balises html afin de pouvoir mettre en forme le texte.
+L'application reconnais si le message contient des liens afin de les faire ressortir et permet de cliquer directement dessus.

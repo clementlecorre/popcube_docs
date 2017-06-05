@@ -30,7 +30,7 @@ Leur nouveau produit est un système complet de messagerie instantanée, tel que
 
 .. toctree::
    :maxdepth: 3
-   :caption: Developpement
+   :caption: Application
 
    developpement/introduction
    developpement/fonctionalite
@@ -51,6 +51,6 @@ Leur nouveau produit est un système complet de messagerie instantanée, tel que
 
 .. toctree::
   :maxdepth: 3
-  :caption: Marketing
+  :caption: Produit
 
   marketing/introduction

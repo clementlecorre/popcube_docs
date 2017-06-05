@@ -20,9 +20,10 @@ Developpement
 * Appel multiples
 
 Home
-######
+############
 
 * Créer un compte :
+
   * Email
   * Password
   * Avatar
@@ -32,21 +33,21 @@ Home
 * reset password
 
 Organisation
-#####
+###########
 
 * Accès rapides aux membres, channels.
 * Possibilité d'administer les channels, les membres et les messages pour les modérateurs.
 * Quitter une organisation
 
 Channel
-######
+############
 
 * Groupes de discution
 * Quitter un channel
 * Lister les membres connectés dans un channel.
 
 Messages
-######
+############
 
 * Ecrire des messages
 * Historique des conversations
@@ -59,7 +60,7 @@ Messages
 * Message privés
 
 Settings
-######
+############
 
 * Configurer micro et caméra
 * Configurer port

@@ -11,6 +11,8 @@ Utilisation d'un design épurer pour faciliter la compréhention des utilisateur
 Hiérarchie
 ####
 
+.. image:: ../../_static/developpement/interface/hierarchie.png
+
 Home
   login
   register
@@ -29,20 +31,28 @@ Home
 
 La page home apparaît lors de la première connexion et permet de trouver une organisation.
 
+.. image:: ../../_static/developpement/interface/home.png
+
 Login
 ^^^^
 
 Une fois l'oganisation trouvée, l'utilisateur se retrouve sur la page de login, qui lui permet de se connecter ou de rejoindre la page register.
+
+.. image:: ../../_static/developpement/interface/login.png
 
 register
 ^^^^
 
 Permet à l'utilisateur de s'enregistrer sur l'oganisation.
 
+.. image:: ../../_static/developpement/interface/register.png
+
 Organisations
 ####
 
 Permet de séléctionner l'organisation sur laquel l'utilisateur veut parler.
+
+.. image:: ../../_static/developpement/interface/organisation.png
 
 Channel
 ^^^^
@@ -52,6 +62,8 @@ Settings
 ####
 
 Permet de gérer tous les paramètres de l'utilisateur et de gérer l'organisation et les channels si l'utilisateur a les droits suffisant.
+
+.. image:: ../../_static/developpement/interface/settings.png
 
 profil
 ^^^^

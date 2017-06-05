@@ -6,16 +6,21 @@ Popcube est avant tout remplis de fonctionnalités utiles aux partages de ressou
 
 Organisation
 ####
-L’organisation est tout simplement le nom de domaine sur popcube. Il permet à votre équipe de se retrouver sous un seul nom et à tous vos collaborateurs de vous retrouver facilement.
+L’organisation est tout simplement le nom de domaine sur PopCube. Il permet à vos équipse de se retrouver sous un seul
+nom et à tous vos collaborateurs de vous retrouver facilement.
 
 
 Membres
 ****
-Les membres sont les utilisateurs inscrit sur votre organisation. Ils ont des droits et la possibilité de rejoindre des channels selon leurs habilitations.
+Les membres sont les utilisateurs inscrit sur votre organisation.
+Ils ont des droits et la possibilité de rejoindre des channels selon leurs habilitations.
 
 Channel
 ****
-Un channel est un salon de discution. C’est la place pour discuter avec votre service et/ou équipe sur un type particulier de besoin. Le nom du channel est important pour aider la hiérarchisation de votre organisation et permettre à vos membres de rejoindre les channels qu’ils désirent.
+Un channel est un salon de discution.
+C’est la place pour discuter avec votre service et/ou équipe sur un type particulier de besoin.
+Le nom du channel est important pour aider la hiérarchisation de votre organisation et permettre à vos
+membres de rejoindre les channels qu’ils désirent.
 
 Exemple :
 
@@ -43,7 +48,7 @@ Les membres peuvent engager des discutions privées entre eux avec la possibilit
 Droits
 ****
 
-Les droits permettent à une organisation de manager leurs équipes en leurs donnant accès à des droits sur les channels ou des accès.
+Les droits permettent à une organisation de manager leurs équipes en leurs donnant accès à des droits sur les channels.
 
 Priver
 ^^^^^
@@ -52,7 +57,8 @@ Le statut priver s'applique à l'organisation comme aux channels. Il permet de b
 Public
 ^^^^^
 
-Une organisation ou un channel publique ne bloque aucun accès. Chaque membre d'une organasation peut y accéder sans avoir de droits particulié.
+Une organisation ou un channel publique ne bloque aucun accès. Chaque membre d'une organasation peut
+y accéder sans avoir de droits particulié.
 
 Management
 ^^^^^

@@ -87,4 +87,4 @@ Pour le stockage on utilise MINIO : `expliqué dans la parti stockage <storage.h
 Stack
 --------
 
-Toutes les organisations sont crée avec docker-compose `v3` en stack.
+Toutes les organisations sont créée avec docker-compose `v3` en stack.

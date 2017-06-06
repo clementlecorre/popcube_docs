@@ -16,7 +16,7 @@ Vsphere client
 
 Logiciel permettant d'administrer un ESXi ainsi que ses machines virtuelles.
 
-.. image:: ../../_static/infrastructure/hyperviseur/vsphere.PNG
+.. image:: ../../_static/infrastructure/hyperviseur/vsphere.jpg
 
 Vcenter
 -------

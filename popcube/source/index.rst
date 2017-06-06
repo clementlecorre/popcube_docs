@@ -54,3 +54,5 @@ Leur nouveau produit est un système complet de messagerie instantanée, tel que
   :caption: Produit
 
   marketing/introduction
+  marketing/pricing
+  marketing/to_be_continued

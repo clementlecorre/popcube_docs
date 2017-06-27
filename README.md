@@ -1,5 +1,8 @@
 # popcube_docs
 
+[![Documentation Status](https://readthedocs.org/projects/popcube-docs/badge/?version=latest)](http://popcube-docs.readthedocs.io/fr/latest/?badge=latest)
+
+
 Documentation for popcube project
 
 ## Build to html

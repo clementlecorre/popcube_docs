@@ -5,6 +5,12 @@
 
 Documentation for popcube project
 
+ * https://github.com/cl3m3nt666/popcube_deploy_api
+ * https://github.com/titouanfreville/PopCube
+ * https://github.com/titouanfreville/popcubeapi
+ * https://github.com/titouanfreville/popcubeexternalapi
+
+
 ## Build to html
 
 ```
